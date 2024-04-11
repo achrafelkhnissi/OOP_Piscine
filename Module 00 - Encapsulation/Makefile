@@ -1,0 +1,35 @@
+CC=c++
+
+CPPFLAGS=-Wall -Wextra -Werror 
+CPPSTD=-std=c++98
+
+OBJDIR=obj
+
+NAME=encapsulation
+
+HEADERS=Account.hpp Bank.hpp
+SRC=main.cpp Account.cpp Bank.cpp
+OBJ=$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
+
+ifeq ($(DEBUG), 1)
+	CPPFLAGS+=-g
+endif
+
+.PHONY: all clean fclean re
+
+all: $(NAME)
+
+$(NAME): $(OBJ) $(HEADERS)
+	$(CC) $(CPPFLAGS) $(CPPSTD) $(OBJ) -o $@
+
+$(OBJDIR)/%.o: %.cpp $(HEADERS)
+	@mkdir -p $(OBJDIR)
+	$(CC) $(CPPFLAGS) $(CPPSTD) -c $< -o $@
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
