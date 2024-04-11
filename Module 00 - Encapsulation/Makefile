@@ -27,7 +27,7 @@ $(OBJDIR)/%.o: %.cpp $(HEADERS)
 	$(CC) $(CPPFLAGS) $(CPPSTD) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJDIR)
 
 fclean: clean
 	rm -f $(NAME)
