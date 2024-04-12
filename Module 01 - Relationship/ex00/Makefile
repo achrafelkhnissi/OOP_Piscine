@@ -7,8 +7,8 @@ OBJDIR=obj
 
 NAME=relationship
 
-HEADERS=Worker.hpp Shovel.hpp Hammer.hpp Tool.hpp
-SRC=main.cpp Worker.cpp Shovel.cpp Hammer.cpp
+HEADERS=Worker.hpp Shovel.hpp Hammer.hpp Tool.hpp Workshop.hpp
+SRC=main.cpp Worker.cpp Shovel.cpp Hammer.cpp Workshop.cpp
 OBJ=$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 
 ifeq ($(DEBUG), 1)
