@@ -38,4 +38,14 @@ In terms of code, aggregation often involves using pointers or references to the
 
 ## Inheritance
 
+Inheritance is a fundamental concept in Object-Oriented Programming (OOP). It allows you to define a class based on another class. This helps to promote code reusability and makes the code easier to maintain.
+
+The class that is being inherited from is called the "base class" or "parent class", and the class that is doing the inheriting is called the "derived class" or "child class".
+
+A derived class inherits all the member variables and member functions of the base class, but has the ability to override or extend the behavior of the base class. This allows you to create more specific classes based on a general class.
+
+For example, in our code, `Tool` is a base class and `Shovel` and `Hammer` are derived classes. The `Shovel` and `Hammer` classes inherit the use, getNumberOfUses, setWorker, getWorker, and destructor methods from `Tool`, and can override these methods to provide their own specific behavior.
+
+Inheritance is a "**is-a**" relationship. It allows you to create a new class that is a type of an existing class. For example, in our code, `Shovel` and `Hammer` are types of `Tool`. They inherit all the properties and behaviors of `Tool` but can also add or override them. Inheritance is useful for code reusability and polymorphism.
+
 ## Association
