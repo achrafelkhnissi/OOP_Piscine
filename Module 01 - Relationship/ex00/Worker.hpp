@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include "Tool.hpp"
 
 class Shovel;
 
@@ -24,8 +26,13 @@ public:
     Worker(std::string name, Position position, Statistic statistic);
     ~Worker();
 
+    std::string getName() const;
+
     void giveShovel(Shovel* shovel);
-    void takeShovel();
+    void takeShovel(); 
+
+    void giveTool(Tool* tool);
+    void takeTool(Tool* tool);
 
     void Print();
 
@@ -34,4 +41,5 @@ private:
     Position _position;
     Statistic _statistic;
     Shovel* _shovel;
+    std::vector<Tool*> _tools;
 };

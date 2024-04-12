@@ -1,20 +1,18 @@
 #include "Shovel.hpp"
 
-Shovel::Shovel() : _type("Basic") {
-    std::cout << "Shovel " << _type << " is born" << std::endl;
-}
-
-Shovel::Shovel(std::string type) : _type(type) {
-    std::cout << "Shovel " << _type << " is born" << std::endl;
+Shovel::Shovel() {
+    std::cout << "Shovel is created" << std::endl;
 }
 
 Shovel::~Shovel() {
-    getWorker()->takeShovel();
-    std::cout << "Shovel " << _type << " is died" << std::endl;
+    Worker* worker = getWorker();
+    if (worker != nullptr)
+        getWorker()->takeTool(this);
+    std::cout << "Shovel is destroyed" << std::endl;
 }
 
 void Shovel::use() {
-    std::cout << "Shovel " << _type << " is used" << std::endl;
+    std::cout << "Shovel is being used" << std::endl;
     _numberOfUses++;
 }
 
@@ -24,6 +22,11 @@ size_t Shovel::getNumberOfUses() const {
 
 void Shovel::setWorker(Worker* worker) {
     _worker = worker;
+
+    if (worker != nullptr)
+        std::cout << "Shovel is given to " << worker->getName() << std::endl;
+    else
+        std::cout << "Shovel is taken from worker" << std::endl;
 }
 
 Worker* Shovel::getWorker() const {

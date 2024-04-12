@@ -5,11 +5,11 @@
 #include "Worker.hpp"
 #include "Tool.hpp"
 
-class Shovel : public Tool
+class Hammer : public Tool
 {
 public:
-    Shovel();
-    ~Shovel();
+    Hammer();
+    ~Hammer();
 
     void use(); // from Tool
 
