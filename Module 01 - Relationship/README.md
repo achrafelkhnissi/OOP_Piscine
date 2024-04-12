@@ -49,3 +49,8 @@ For example, in our code, `Tool` is a base class and `Shovel` and `Hammer` are d
 Inheritance is a "**is-a**" relationship. It allows you to create a new class that is a type of an existing class. For example, in our code, `Shovel` and `Hammer` are types of `Tool`. They inherit all the properties and behaviors of `Tool` but can also add or override them. Inheritance is useful for code reusability and polymorphism.
 
 ## Association
+**Association** is a fundamental concept in Object-Oriented Programming (OOP). It defines a relationship between classes that allows one object instance to cause another to perform an action on its behalf.
+
+**Association** represents a "**has-a**" relationship between different classes. For example. In our code, the `Workshop` class has an **association** with the `Worker` class. This is represented by the `_workers` vector in the `Workshop` class, which contains pointers to `Worker` objects. The `Workshop` class can then delegate certain tasks to the `Worker` objects it contains.
+
+**Association** can be one-to-one, one-to-many, many-to-one, or many-to-many. In your code, the **association** between `Workshop` and `Worker` is one-to-many, as one `Workshop` can have many `Workers`.
