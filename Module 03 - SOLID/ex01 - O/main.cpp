@@ -10,6 +10,8 @@ int main() {
     articles["article1"] = 10;
     articles["article2"] = 20;
     articles["article3"] = 30;
+	articles["article4"] = 100;
+	articles["article5"] = 50;
 
     Command cmd("1", "Monday", "client1", articles);
     TuesdayDiscountCommand tdc("2", "Tuesday", "client2", articles);
